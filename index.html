@@ -143,6 +143,11 @@ button:hover {
 </div>
 
 <script>
+    document.addEventListener("keydown", function(e) {
+    if (e.key.toLowerCase() === "m") {
+        alert("Minecraft memory unlocked: we survived 5-hour call chaos");
+    }
+});
 function start() {
     document.getElementById("content").classList.remove("hidden");
 }
