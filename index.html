@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case File #001</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f2e8;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+.section {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #222;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CASE FILE #001</h1>
+    <p>Unauthorized love event detected via Minecraft connection</p>
+    <button onclick="start()">Open Case File</button>
+</header>
+
+<div id="content" class="hidden">
+
+    <div class="section">
+        <h2>Mission Logs</h2>
+
+        <div class="card" onclick="toggle('m1')">
+            🎮 31.03 — Minecraft Connection
+            <div id="m1" class="hidden">
+                Server created. Voice unstable. 5-hour call survival achieved.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('m2')">
+            💬 15.04 — The Question
+            <div id="m2" class="hidden">
+                “Do you like me?” → YES.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('m3')">
+            💋 24.04 — First Kiss Incident
+            <div id="m3" class="hidden">
+                Police interaction triggered unexpected romantic outcome.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('m4')">
+            💐 21.05 — Flowers DLC
+            <div id="m4" class="hidden">
+                First flowers delivered successfully. Then police expansion pack activated.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('m5')">
+            🏍️ Motorcycle Incident
+            <div id="m5" class="hidden">
+                Hospital arc initiated. Relationship upgrade unlocked.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Secret Files</h2>
+
+        <div class="card" onclick="toggle('s1')">
+            💌 Corrupted File
+            <div id="s1" class="hidden">
+                I didn’t expect Minecraft to lead me to you.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('s2')">
+            💌 Hidden Log
+            <div id="s2" class="hidden">
+                Even when things are messy, I still choose you.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function start() {
+    document.getElementById("content").classList.remove("hidden");
+}
+
+function toggle(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
