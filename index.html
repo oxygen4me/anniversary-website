@@ -67,6 +67,33 @@ button:hover {
     font-size: 12px;
     opacity: 0.6;
 }
+    .profiles-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.profiles-top img {
+    max-width: 180px;
+}
+
+.heart-between {
+    width: 50px;
+}
+
+.profile-boxes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-boxes .card {
+    width: 300px;
+}
 </style>
 </head>
 
@@ -89,7 +116,7 @@ button:hover {
     <h2>Character Profiles</h2>
 
     <div class="card" onclick="toggle('him')">
-
+<img src="images/profile-him.jpg" width="180">
         <strong>⚡ Electrician DLC (Paphos Server)</strong>
 
         <div id="him" class="hidden">
@@ -123,7 +150,7 @@ button:hover {
     </div>
 
     <div class="card" onclick="toggle('her')">
-
+<img src="images/profile-her.jpg" width="180">
         <strong>🍽 Waitress Branch (Limassol Server)</strong>
 
         <div id="her" class="hidden">
