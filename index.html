@@ -206,6 +206,38 @@ button:hover {
     border-right: 2px solid #111;
     white-space: pre-wrap;
 }
+    .heart-secret-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.heart-secret {
+    width: 140px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.heart-secret:hover {
+    transform: scale(1.1);
+}
+
+.secret-message {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+}
+
+.secret-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 </head>
 
@@ -568,9 +600,9 @@ Question deployed:
         <p>
         SYSTEM SUMMARY:
         <br>
-        Flowers delivered: ✔
-        Emotional damage repaired: ✔
-        Normal day achieved: ✖
+         <li>Flowers delivered: ✔ </li>
+         <li>Emotional damage repaired: ✔</li>
+         <li>Normal day achieved: ✖</li>
         </p>
 
     </div>
@@ -698,19 +730,19 @@ Question deployed:
      class="secret-file"
      onclick="openLetter()">
         
-        <div class="card" onclick="toggle('s1')">
-            💌 Corrupted File
-            <div id="s1" class="hidden">
-                I didn’t expect Minecraft to lead me to you.
-            </div>
-        </div>
+        <div class="heart-secret-wrapper">
 
-        <div class="card" onclick="toggle('s2')">
-            💌 Hidden Log
-            <div id="s2" class="hidden">
-                Even when things are messy, I still choose you.
-            </div>
-        </div>
+    <img src="images/heart-red-two.jpg"
+         class="heart-secret"
+         onclick="revealSecret()">
+
+    <div id="s2" class="hidden secret-message">
+        <li> Я тебе умный вещь скажу, но только ты не обижайся... </li>
+<li>Моя любовь больше, чем любые недопонимания, любое расстояние, любое количество сна и любые мои страхи.</li> 
+<li><strong>Я люблюб тебя больше, чем ты можешь себе представить.</strong></li>
+    </div>
+
+</div>
 
     </div>
 
@@ -755,6 +787,17 @@ function kissConfetti() {
         spread: 90,
         origin: { y: 0.6 },
         colors: ["#ff4d6d", "#ff99ac", "#ffffff"]
+    });
+}
+    function revealSecret() {
+    const msg = document.getElementById("s2");
+    msg.classList.add("show");
+    msg.classList.remove("hidden");
+
+    confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 }
     });
 }
 
