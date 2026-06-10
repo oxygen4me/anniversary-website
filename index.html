@@ -94,6 +94,58 @@ button:hover {
 .profile-boxes .card {
     width: 300px;
 }
+    .evidence-archive {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+    padding: 20px;
+}
+
+.doodle {
+    position: absolute;
+    width: 80px;
+    opacity: 0.9;
+}
+
+.mic {
+    left: -90px;
+    top: 50px;
+}
+
+.camera {
+    right: -90px;
+    top: 150px;
+}
+
+.cat {
+    left: -80px;
+    top: 450px;
+}
+
+.flowers {
+    right: -90px;
+    top: 700px;
+}
+
+.bandaid {
+    left: -90px;
+    top: 950px;
+}
+    .evidence-archive .card {
+    margin-bottom: 20px;
+    text-align: left;
+}
+    .question {
+    right: -70px;
+    top: 400px;
+    width: 60px;
+}
+
+.exclamation {
+    left: -70px;
+    top: 750px;
+    width: 60px;
+}
 </style>
 </head>
 
@@ -222,8 +274,23 @@ button:hover {
 
 
     <div class="section">
-        <h2>Evidence Archive</h2>
-<img src="images/microphone.png" width="120">
+        <div class="evidence-archive">
+            
+            <img src="images/microphone.jpg" class="doodle mic">
+            <img src="images/camera.jpg" class="doodle camera">
+            <img src="images/cat.jpg" class="doodle cat">
+            <img src="images/flowers.jpg" class="doodle flowers">
+            <img src="images/bandaid.jpg" class="doodle bandaid">
+            <img src="images/question.jpg" class="doodle question">
+            <img src="images/exclamation.jpg" class="doodle exclamation">
+            
+        <h2>📂 EVIDENCE ARCHIVE</h2>
+
+<p class="small-note">
+All incidents documented for investigative purposes.
+</p>
+            
+
         <div class="card" onclick="toggle('m1')">
     <strong>🎮 MISSION 01 — Minecraft Connection</strong>
     <div id="m1" class="hidden">
@@ -262,19 +329,49 @@ button:hover {
         <p><strong>Date:</strong> 15.04</p>
 
         <p>
-        Bus was missed due to ungrateful customers enjoying their dinner for too long.
-        The poor man was woken up by a phone call.
-        The crazy woman opened her questions era, because she always needs clarity.
-        </p>
-<img src="images/question.png" width="120">
+Following a late shift and a missed bus, Subject A launched an
+unexpected interrogation.
+
+Subject B was awakened for questioning and cooperated under pressure.
+</p>
+
+<p>
+Question deployed:
+<br>
+"Do you like me?"
+</p>
+
+<ul>
+    <li>🏆 Answer received: YES</li>
+    <li>🏆 Katia happiness increased dramatically</li>
+    <li>🏆 Mino stress levels reached critical values</li>
+</ul>
+
+    </div>
+</div>
+            <div class="card" onclick="toggle('m6')">
+    <strong>🐱 MISSION 06 — Armenia Side Quest</strong>
+
+    <div id="m6" class="hidden">
+
+        <p><strong>Date:</strong> 16.04–19.04</p>
+
         <p>
-        Achievements:
+        Subject A temporarily travelled abroad and entered the Armenia expansion pack.
+        </p>
+
+        <ul>
+            <li>Tourist photos collected</li>
+            <li>Cat photos transmitted regularly</li>
+            <li>Communication remained stable</li>
+        </ul>
+
+        <p>
+        Interesting discovery:
         <br>
-            <ul>
-        <li>🏆 “Do you like me?” → YES.</li>
-        <li>🏆 Happy Katia</li>
-        <li>🏆 Stressed Mino</li>
-                 </ul>
+        Subject B is Armenian.
+        <br>
+        Subject B has never actually visited Armenia.
         </p>
 
     </div>
@@ -295,7 +392,7 @@ button:hover {
         </p>
 
         <ul>
-            <li>Offense: Ignoring licence check.</li>
+            <li>Offense: Existing near police officers.</li>
             <li>Additional Findings: No licence.</li>
             <li>Unexpected Consequence: First kiss.</li>
             <li>Time of return home: 03:00</li>
@@ -309,7 +406,67 @@ button:hover {
 
     </div>
 </div>
-<img src="images/hospital.png" width="120">
+            <div class="card" onclick="toggle('m7')">
+    <strong>🍳 MISSION 07 — Domestic Experimentation</strong>
+
+    <div id="m7" class="hidden">
+
+        <p><strong>Date:</strong> 27.04</p>
+
+        <p>
+        Subject A prepared food for Subject B.
+        </p>
+
+        <p>
+        Results:
+        </p>
+
+        <ul>
+            <li>Poison attempt unsuccessful</li>
+            <li>Subject B survived</li>
+            <li>Would eat again</li>
+        </ul>
+
+        <p>
+        Further testing recommended.
+        </p>
+
+    </div>
+</div>
+            <div class="card" onclick="toggle('m8')">
+    <strong>🔧 MISSION 08 — Communication Patch v1.0</strong>
+
+    <div id="m8" class="hidden">
+
+        <p><strong>Date:</strong> 29.04</p>
+
+        <p>
+        A communication bug was discovered.
+        </p>
+
+        <ul>
+            <li>"Maybe" interpreted as "Definitely"</li>
+            <li>Confusion levels increased</li>
+            <li>Feelings detected</li>
+        </ul>
+
+        <p>
+        Patch Notes:
+        </p>
+
+        <ul>
+            <li>More communication</li>
+            <li>Fewer assumptions</li>
+            <li>Improved understanding</li>
+        </ul>
+
+        <p>
+        Status: Update successful.
+        </p>
+
+    </div>
+</div>
+
 <div class="card" onclick="toggle('m4')">
     <strong>🏍️ MISSION 04 — Motorcycle Incident</strong>
     <div id="m4" class="hidden">
@@ -317,12 +474,16 @@ button:hover {
         <p><strong>Date:</strong> 10.05</p>
 
         <p>
-        Subject involved in motorcycle accident.
-        Emergency support activated.
-        Night-long video call engaged.
-        Hospital arc initiated next morning.
+           A transportation-related incident occurred.
+           Subject A immediately entered Emergency Worry Mode and remained on video call support throughout the night.
         </p>
-<img src="images/bandaid.png" width="120">
+
+        <ul>
+           <li>Medical consultation strongly encouraged</li>
+           <li>Hospital visit completed</li>
+           <li>No major damage detected</li>
+        </ul>
+        
         <p>
         Relationship upgrade unlocked.
         </p>
@@ -334,14 +495,14 @@ button:hover {
     <strong>💐 MISSION 05 — Flowers DLC</strong>
     <div id="m5" class="hidden">
 
-        <p><strong>Date:</strong> 31.03</p>
+        <p><strong>Date:</strong> 21.05</p>
 
         <p>
         First flowers delivered. 
         Girlfriend is reassured successfully. 
         Then police expansion pack activated. Escort initiated.
         </p>
-<img src="images/flowers.png" width="150">
+
         <p>
         (CAN YOU LIKE STOP OR WHATEVER?)
         </p>
@@ -356,9 +517,83 @@ button:hover {
 
     </div>
 </div>
+<div class="card" onclick="toggle('m9')">
+    <strong>🌍 MISSION 09 — Long Distance Mode</strong>
 
-        
+    <div id="m9" class="hidden">
 
+        <p><strong>Date:</strong> 25.05–05.06</p>
+
+        <p>
+        Long Distance Mode activated.
+        </p>
+
+        <ul>
+            <li>Physical proximity: unavailable</li>
+            <li>Phone usage: increased</li>
+            <li>Missing each other: HIGH</li>
+        </ul>
+
+        <p>
+        Difficulty setting:
+        <br>
+        Hard.
+        </p>
+
+    </div>
+</div>
+<div class="card" onclick="toggle('m10')">
+    <strong>🍽️ MISSION 10 — Reunion Patch</strong>
+
+    <div id="m10" class="hidden">
+
+        <p><strong>Date:</strong> 06.06</p>
+
+        <p>
+        Subjects reunited following extended separation.
+        </p>
+
+        <ul>
+            <li>Restaurant date completed</li>
+            <li>Quality time restored</li>
+            <li>Parent encounter event triggered</li>
+        </ul>
+
+        <p>
+        No casualties reported.
+        </p>
+
+    </div>
+</div>
+            <div class="card" onclick="toggle('m11')">
+    <strong>😴 MISSION 11 — Sleep Sync Event</strong>
+
+    <div id="m11" class="hidden">
+
+        <p><strong>Date:</strong> 07.06</p>
+
+        <p>
+        Subject B remained awake all night with friends before travelling
+        directly to Subject A's location.
+        </p>
+
+        <p>
+        Primary objective:
+        <br>
+        Sleep.
+        </p>
+
+        <p>
+        Objective completed successfully.
+        </p>
+
+        <p>
+        One of the calmest and happiest events on record.
+        </p>
+
+    </div>
+</div>
+</div>
     </div>
 
     <div class="section">
