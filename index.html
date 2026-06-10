@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Case File #001</title>
@@ -52,13 +49,25 @@ h1 {
     display: none;
 }
 
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #111;
+    color: white;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #333;
+}
+
 .small-note {
     font-size: 12px;
     opacity: 0.6;
 }
-
-/* profiles */
-.profiles-top {
+    .profiles-top {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,9 +94,7 @@ h1 {
 .profile-boxes .card {
     width: 300px;
 }
-
-/* evidence */
-.evidence-archive {
+    .evidence-archive {
     max-width: 850px;
     margin: auto;
     position: relative;
@@ -100,14 +107,46 @@ h1 {
     opacity: 0.9;
 }
 
-.mic { left: -90px; top: 50px; }
-.camera { right: -90px; top: 150px; }
-.cat { left: -80px; top: 450px; }
-.flowers { right: -90px; top: 700px; }
-.bandaid { left: -90px; top: 950px; }
+.mic {
+    left: -90px;
+    top: 50px;
+}
 
-/* modal */
-.modal {
+.camera {
+    right: -90px;
+    top: 150px;
+}
+
+.cat {
+    left: -80px;
+    top: 450px;
+}
+
+.flowers {
+    right: -90px;
+    top: 700px;
+}
+
+.bandaid {
+    left: -90px;
+    top: 950px;
+}
+    .evidence-archive .card {
+    margin-bottom: 20px;
+    text-align: left;
+}
+    .question {
+    right: -70px;
+    top: 400px;
+    width: 60px;
+}
+
+.exclamation {
+    left: -70px;
+    top: 750px;
+    width: 60px;
+}
+    .modal {
     display: none;
     position: fixed;
     z-index: 9999;
@@ -153,6 +192,7 @@ h1 {
 /* TYPEWRITER */
 .typewriter {
     border-right: 2px solid #111;
+    white-space: pre-wrap;
 }
 </style>
 </head>
@@ -172,100 +212,501 @@ h1 {
 
 <div id="content" class="hidden">
 
-    <!-- CHARACTER PROFILES -->
     <div class="section">
-        <h2>Character Profiles</h2>
 
+<!-- CHARACTER PROFILES -->
+
+    <h2>Character Profiles</h2>
         <div class="profiles-top">
+
             <img src="images/profile-her.jpg">
+
             <img src="images/heart-red.jpg" class="heart-between">
+
             <img src="images/profile-him.jpg">
+
         </div>
+<div class="profile-boxes">
+    
+    <div class="card" onclick="toggle('her')">
 
-        <div class="profile-boxes">
+        <strong>🍽 Waitress Branch (Limassol Server)</strong>
 
-            <div class="card" onclick="toggle('her')">
-                <strong>🍽 Waitress Branch</strong>
-                <div id="her" class="hidden">
-                    <p>Professional Overthinker</p>
-                </div>
-            </div>
+        <div id="her" class="hidden">
 
-            <div class="card" onclick="toggle('him')">
-                <strong>⚡ Electrician DLC</strong>
-                <div id="him" class="hidden">
-                    <p>Questionable Driver</p>
-                </div>
-            </div>
+            <p><strong>CLASS</strong></p>
+            <p>Professional Overthinker</p>
+
+            <p><strong>SPECIAL ABILITIES</strong></p>
+            <ul>
+                <li>Detecting mood changes from one text message (sometimes wrongly)</li>
+                <li>Long-distance endurance</li>
+                <li>Drawing weird things</li>
+                <li>Remembering conversations from three weeks ago</li>
+            </ul>
+
+            <p><strong>KNOWN BUGS</strong></p>
+            <ul>
+                <li>Overthinking.exe</li>
+                <li>Silent Mode Activation</li>
+                <li>Assuming "maybe" means "definitely"</li>
+            </ul>
+
+            <p><strong>CURRENT STATUS</strong></p>
+            <p>Still working on patches</p>
 
         </div>
     </div>
+     <div class="card" onclick="toggle('him')">
 
-    <!-- STATS -->
-    <div class="section">
-        <h2>Relationship Statistics</h2>
+        <strong>⚡ Electrician DLC (Paphos Server)</strong>
 
-        <div class="card">
-            <p><strong>Minecraft Servers:</strong> 1</p>
-            <p><strong>Police Encounters:</strong> Too many</p>
-            <p><strong>Motorcycle Incidents:</strong> 1</p>
-            <p><strong>Flowers Received:</strong> 1</p>
-            <p><strong>Status:</strong> ACTIVE</p>
+        <div id="him" class="hidden">
+
+            <p><strong>CLASS</strong></p>
+            <p>Questionable Driver</p>
+
+            <p><strong>SPECIAL ABILITIES</strong></p>
+            <ul>
+                <li>Fixing electrical problems</li>
+                <li>No sleep VS sleeping all day</li>
+                <li>Identifying cars by one note</li>
+                <li>Appearing unexpectedly</li>
+            </ul>
+
+            <p><strong>KNOWN INCIDENTS</strong></p>
+            <ul>
+                <li>Motorcycle DLC</li>
+                <li>Multiple police-related side quests</li>
+                <li>Causing emotional attachment</li>
+            </ul>
+
+            <p><strong>WEAKNESSES</strong></p>
+            <ul>
+                <li>Driver's licences</li>
+                <li>Being told to go to the doctor</li>
+            </ul>
+
         </div>
+
     </div>
 
-    <!-- EVIDENCE ARCHIVE -->
-    <div class="section">
-        <div class="evidence-archive">
+    </div>
 
+</div>
+
+<!-- RELATIONSHIP STATISTICS -->
+
+     <div class="section">
+
+    <h2>Relationship Statistics</h2>
+
+    <div class="card">
+
+        <p><strong>Minecraft Servers Started:</strong> 1</p>
+        <p><strong>Police Encounters:</strong> More than expected</p>
+        <p><strong>Motorcycle Incidents:</strong> 1</p>
+        <p><strong>Flowers Received:</strong> 1</p>
+        <p><strong>Armenian Cat Updates:</strong> Classified</p>
+        <p><strong>Hours Spent on Calls:</strong> A worrying amount</p>
+        <p><strong>Distance Between Players:</strong> Not close enough</p>
+        <p><strong>Amount We Miss Each Other:</strong> HIGH</p>
+        <p><strong>Relationship Status:</strong> ACTIVE</p>
+
+    </div>
+
+</div>
+
+<!-- EVIDENCE ARCHIVE -->
+
+<div class="section">
+    <div class="evidence-archive">
+            
             <img src="images/microphone.jpg" class="doodle mic">
             <img src="images/camera.jpg" class="doodle camera">
             <img src="images/cat.jpg" class="doodle cat">
             <img src="images/flowers.jpg" class="doodle flowers">
             <img src="images/bandaid.jpg" class="doodle bandaid">
+            <img src="images/question.jpg" class="doodle question">
+            <img src="images/exclamation.jpg" class="doodle exclamation">
+            
+        <h2>📂 EVIDENCE ARCHIVE</h2>
 
-            <h2>📂 EVIDENCE ARCHIVE</h2>
+<p class="small-note">
+All incidents documented for investigative purposes.
+</p>
+            
 
-            <!-- MISSION 4 -->
-            <div class="card" onclick="toggle('m4')">
-                <strong>💋 MISSION 04 — First Kiss Incident</strong>
+        <div class="card" onclick="toggle('m1')">
+    <strong>🎮 MISSION 01 — Minecraft Connection</strong>
+    <div id="m1" class="hidden">
 
-                <div id="m4" class="hidden">
+        <p><strong>Date:</strong> 31.03</p>
 
-                    <p><strong>Date:</strong> 24.04</p>
+        <p>
+        A Minecraft server was created.
+        A Discord call was opened.
+        Nobody expected either event to have long-term consequences.
+        </p>
 
-                    <p>Police interaction triggered unexpected romantic outcome.</p>
+        <p>
+        Technical difficulties included:
+        </p>
 
-                    <ul>
-                        <li data-typewriter>Offense: Existing near police officers.</li>
-                        <li data-typewriter>Unexpected Consequence: First kiss.</li>
-                        <li data-typewriter>Time of return home: 03:00</li>
-                    </ul>
+        <ul>
+                <li data-typewriter>Internet disconnecting every five minutes</li>
+                <li data-typewriter>Microphone functioning at 37%</li>
+                <li data-typewriter>General chaos</li>
+        </ul>
 
-                </div>
-            </div>
 
-        </div>
+        <p>
+        Despite these conditions:
+        <br>
+        ✔ 5-hour call completed
+        </p>
+
+    </div>
+</div>
+
+<div class="card" onclick="toggle('m2')">
+    <strong>💬 MISSION 02 — The Question</strong>
+    <div id="m2" class="hidden">
+
+        <p><strong>Date:</strong> 15.04</p>
+
+        <p>
+Following a late shift and a missed bus, Subject A launched an
+unexpected interrogation.
+
+Subject B was awakened for questioning and cooperated under pressure.
+</p>
+
+<p>
+Question deployed:
+<br>
+"Do you like me?"
+</p>
+
+<ul>
+                <li data-typewriter>🏆 Answer received: YES</li>
+                <li data-typewriter>🏆 Katia happiness increased dramatically</li>
+                <li data-typewriter>🏆 Mino stress levels reached critical values</li>
+</ul>
+    </div>
+</div>
+            <div class="card" onclick="toggle('m3')">
+    <strong>🐱 MISSION 03 — Armenia Side Quest</strong>
+
+    <div id="m3" class="hidden">
+
+        <p><strong>Date:</strong> 16.04–19.04</p>
+
+        <p data-typewriter>
+            Subject A temporarily travelled abroad and entered the Armenia expansion pack.
+        </p>
+
+        <ul>
+            <li>Tourist photos collected</li>
+            <li>Cat photos transmitted regularly</li>
+            <li>Communication remained stable</li>
+        </ul>
+
+        <p>
+        Interesting discovery:
+        <br>
+        Subject B is Armenian.
+        <br>
+        Subject B has never actually visited Armenia.
+        </p>
+
+    </div>
+</div>
+
+<div class="card" onclick="toggle('m4')">
+    <strong>💋 MISSION 04 — First Kiss Incident</strong>
+    <div id="m4" class="hidden">
+
+        <p><strong>Date:</strong> 24.04</p>
+
+        <p>
+        Police interaction triggered unexpected romantic outcome.
+        </p>
+
+        <p>
+        INCIDENT REPORT:
+        </p>
+
+        <ul>
+            <li data-typewriter> Offense: Existing near police officers.</li>
+            <li data-typewriter> Additional Findings: No licence.</li>
+            <li data-typewriter> Unexpected Consequence: First kiss.</li>
+            <li data-typewriter> Time of return home: 03:00</li>
+            <li data-typewriter> Work status: 09:00 shift (ignored)</li>
+
+        </ul>
+
+        <p>
+        This remains my favorite example of cause and effect.
+        </p>
+
+    </div>
+</div>
+            <div class="card" onclick="toggle('m5')">
+    <strong>🍳 MISSION 05 — Domestic Experimentation</strong>
+
+    <div id="m5" class="hidden">
+
+        <p><strong>Date:</strong> 27.04</p>
+
+        <p>
+        Subject A prepared food for Subject B.
+        </p>
+
+        <p>
+        Results:
+        </p>
+
+        <ul>
+            <li data-typewriter> Poison attempt unsuccessful</li>
+            <li data-typewriter> Subject B survived</li>
+            <li data-typewriter> Would eat again</li>
+        </ul>
+
+        <p>
+        Further testing recommended.
+        </p>
+
+    </div>
+</div>
+            <div class="card" onclick="toggle('m6')">
+    <strong>🔧 MISSION 06 — Communication Patch v1.0</strong>
+
+    <div id="m6" class="hidden">
+
+        <p><strong>Date:</strong> 29.04</p>
+
+        <p>
+        A communication bug was discovered.
+        </p>
+
+        <ul>
+            <li data-typewriter> "Maybe" interpreted as "Definitely"</li>
+            <li data-typewriter> Confusion levels increased</li>
+            <li data-typewriter> Feelings detected</li>
+        </ul>
+
+        <p>
+        Patch Notes:
+        </p>
+
+        <ul>
+            <li>More communication</li>
+            <li>Fewer assumptions</li>
+            <li>Improved understanding</li>
+        </ul>
+
+        <p>
+        Status: Update successful.
+        </p>
+
+    </div>
+</div>
+
+<div class="card" onclick="toggle('m7')">
+    <strong>🏍️ MISSION 07 — Motorcycle Incident</strong>
+    <div id="m7" class="hidden">
+
+        <p><strong>Date:</strong> 10.05</p>
+
+        <p data-typewriter>
+           A transportation-related incident occurred.
+           Subject A immediately entered Emergency Worry Mode and remained on video call support throughout the night.
+        </p>
+
+        <ul>
+           <li>Medical consultation strongly encouraged</li>
+           <li>Hospital visit completed</li>
+           <li>No major damage detected</li>
+        </ul>
+        
+        <p data-typewriter>
+        Relationship upgrade unlocked.
+        </p>
+
+    </div>
+</div>
+
+<div class="card" onclick="toggle('m8')">
+    <strong>💐 MISSION 08 — Flowers DLC</strong>
+    <div id="m8" class="hidden">
+
+        <p><strong>Date:</strong> 31.03</p>
+
+        <p>
+        First flowers delivered. 
+        Girlfriend is reassured successfully. 
+        Then police expansion pack activated. Escort initiated.
+        </p>
+
+        <p data-typewriter>
+        (CAN YOU LIKE STOP OR WHATEVER?)
+        </p>
+
+        <p>
+        SYSTEM SUMMARY:
+        <br>
+        Flowers delivered: ✔
+        Emotional damage repaired: ✔
+        Normal day achieved: ✖
+        </p>
+
+    </div>
+</div>
+
+<div class="card" onclick="toggle('m9')">
+    <strong>🌍 MISSION 09 — Long Distance Mode</strong>
+
+    <div id="m9" class="hidden">
+
+        <p><strong>Date:</strong> 25.05–05.06</p>
+
+        <p data-typewriter>
+        Long Distance Mode activated.
+        </p>
+
+        <ul>
+            <li>Physical proximity: unavailable</li>
+            <li>Phone usage: increased</li>
+            <li>Missing each other: HIGH</li>
+        </ul>
+
+        <p>
+        Difficulty setting:
+        <br>
+        Hard.
+        </p>
+
+    </div>
+</div>
+
+<div class="card" onclick="toggle('m10')">
+    <strong>🍽️ MISSION 10 — Reunion Patch</strong>
+
+    <div id="m10" class="hidden">
+
+        <p><strong>Date:</strong> 06.06</p>
+
+        <p>
+        Subjects reunited following extended separation.
+        </p>
+
+        <ul>
+            <li data-typewriter>Restaurant date completed</li>
+            <li data-typewriter>Quality time restored</li>
+            <li data-typewriter>Parent encounter event triggered</li>
+        </ul>
+
+        <p>
+        No casualties reported.
+        </p>
+
+    </div>
+</div>
+            <div class="card" onclick="toggle('m11')">
+    <strong>😴 MISSION 11 — Sleep Sync Event</strong>
+
+    <div id="m11" class="hidden">
+
+        <p><strong>Date:</strong> 07.06</p>
+
+        <p>
+        Subject B remained awake all night with friends before travelling
+        directly to Subject A's location.
+        </p>
+
+        <p>
+        Primary objective:
+        <br>
+        Sleep.
+        </p>
+
+        <p>
+        Objective completed successfully.
+        </p>
+
+        <p data-typewriter>
+        One of the calmest and happiest events on record.
+        </p>
+
+    </div>
+</div>
+
+
+</div>
     </div>
 
-    <!-- SECRET FILES -->
+<div class="card">
+
+    <p>
+    Current mission queue:
+    </p>
+
+    <ul>
+        <li>🎮 More Minecraft</li>
+        <li>🚗 Acquire driver's licence</li>
+        <li>📅 Defeat conflicting work schedules</li>
+        <li>😴 Obtain healthy sleep patterns (unlikely)</li>
+        <li>📸 Gather additional photographic evidence</li>
+        <li>❤️ Continue being disgustingly cute together</li>
+    </ul>
+
+    <p>
+    Progress: Ongoing
+    </p>
+
+</div>
+    
     <div class="section">
         <h2>Secret Files</h2>
 
         <img src="images/do-not-open.jpg"
-             class="secret-file"
-             onclick="openLetter()">
+     class="secret-file"
+     onclick="openLetter()">
+        
+        <div class="card" onclick="toggle('s1')">
+            💌 Corrupted File
+            <div id="s1" class="hidden">
+                I didn’t expect Minecraft to lead me to you.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('s2')">
+            💌 Hidden Log
+            <div id="s2" class="hidden">
+                Even when things are messy, I still choose you.
+            </div>
+        </div>
+
     </div>
 
 </div>
 
 <!-- MODAL -->
-<div id="letterModal" class="modal">
+     <div id="letterModal" class="modal">
+
     <div class="modal-content">
+
         <span class="close-btn" onclick="closeLetter()">✖</span>
-        <img src="images/love-letter.jpg" class="letter-image">
+
+        <img src="images/love-letter.jpg"
+             alt="Love Letter"
+             class="letter-image">
+
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
 
@@ -282,7 +723,6 @@ function boom() {
         origin: { y: 0.6 }
     });
 }
-
 function kissConfetti() {
     confetti({
         particleCount: 180,
@@ -295,23 +735,25 @@ function kissConfetti() {
 /* TYPEWRITER */
 function typeWriter(el, speed = 18) {
     const text = el.dataset.text;
-    if (!text) return;
+    if (!text) {
+        el.dataset.text = el.textContent.trim();
+    }
 
+    const finalText = el.dataset.text;
     el.textContent = "";
-    let i = 0;
 
+    let i = 0;
     function write() {
-        if (i < text.length) {
-            el.textContent += text.charAt(i);
+        if (i < finalText.length) {
+            el.textContent += finalText.charAt(i);
             i++;
             setTimeout(write, speed);
         }
     }
-
     write();
 }
 
-/* TOGGLE (FIXED) */
+/* TOGGLE */
 function toggle(id) {
     const el = document.getElementById(id);
     const opening = el.classList.contains("hidden");
@@ -319,7 +761,6 @@ function toggle(id) {
     el.classList.toggle("hidden");
 
     if (opening) {
-
         boom();
 
         if (id === "m4") {
@@ -328,13 +769,7 @@ function toggle(id) {
 
         setTimeout(() => {
             const items = el.querySelectorAll("[data-typewriter]");
-
-            items.forEach(item => {
-                if (!item.dataset.text) {
-                    item.dataset.text = item.textContent.trim();
-                }
-                typeWriter(item);
-            });
+            items.forEach(item => typeWriter(item));
         }, 120);
     }
 }
@@ -347,15 +782,14 @@ function openLetter() {
 function closeLetter() {
     document.getElementById("letterModal").style.display = "none";
 }
-
-window.onclick = function(event) {
+    window.onclick = function(event) {
     const modal = document.getElementById("letterModal");
+
     if (event.target === modal) {
         modal.style.display = "none";
     }
 };
-
 </script>
-
+    
 </body>
 </html>
