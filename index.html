@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <meta charset="UTF-8" />
@@ -51,20 +52,6 @@ h1 {
     display: none;
 }
 
-button {
-    padding: 12px 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #111;
-    color: white;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #333;
-}
-
 .small-note {
     font-size: 12px;
     opacity: 0.6;
@@ -99,7 +86,7 @@ button:hover {
     width: 300px;
 }
 
-/* evidence archive */
+/* evidence */
 .evidence-archive {
     max-width: 850px;
     margin: auto;
@@ -118,23 +105,6 @@ button:hover {
 .cat { left: -80px; top: 450px; }
 .flowers { right: -90px; top: 700px; }
 .bandaid { left: -90px; top: 950px; }
-
-.question {
-    right: -70px;
-    top: 400px;
-    width: 60px;
-}
-
-.exclamation {
-    left: -70px;
-    top: 750px;
-    width: 60px;
-}
-
-.evidence-archive .card {
-    margin-bottom: 20px;
-    text-align: left;
-}
 
 /* modal */
 .modal {
@@ -179,6 +149,11 @@ button:hover {
     width: 180px;
     cursor: pointer;
 }
+
+/* TYPEWRITER */
+.typewriter {
+    border-right: 2px solid #111;
+}
 </style>
 </head>
 
@@ -197,6 +172,7 @@ button:hover {
 
 <div id="content" class="hidden">
 
+    <!-- CHARACTER PROFILES -->
     <div class="section">
         <h2>Character Profiles</h2>
 
@@ -209,17 +185,15 @@ button:hover {
         <div class="profile-boxes">
 
             <div class="card" onclick="toggle('her')">
-                <strong>🍽 Waitress Branch (Limassol Server)</strong>
+                <strong>🍽 Waitress Branch</strong>
                 <div id="her" class="hidden">
-                    <p><strong>CLASS</strong></p>
                     <p>Professional Overthinker</p>
                 </div>
             </div>
 
             <div class="card" onclick="toggle('him')">
-                <strong>⚡ Electrician DLC (Paphos Server)</strong>
+                <strong>⚡ Electrician DLC</strong>
                 <div id="him" class="hidden">
-                    <p><strong>CLASS</strong></p>
                     <p>Questionable Driver</p>
                 </div>
             </div>
@@ -227,18 +201,20 @@ button:hover {
         </div>
     </div>
 
+    <!-- STATS -->
     <div class="section">
         <h2>Relationship Statistics</h2>
 
         <div class="card">
-            <p><strong>Minecraft Servers Started:</strong> 1</p>
-            <p><strong>Police Encounters:</strong> More than expected</p>
+            <p><strong>Minecraft Servers:</strong> 1</p>
+            <p><strong>Police Encounters:</strong> Too many</p>
             <p><strong>Motorcycle Incidents:</strong> 1</p>
             <p><strong>Flowers Received:</strong> 1</p>
-            <p><strong>Relationship Status:</strong> ACTIVE</p>
+            <p><strong>Status:</strong> ACTIVE</p>
         </div>
     </div>
 
+    <!-- EVIDENCE ARCHIVE -->
     <div class="section">
         <div class="evidence-archive">
 
@@ -250,23 +226,29 @@ button:hover {
 
             <h2>📂 EVIDENCE ARCHIVE</h2>
 
+            <!-- MISSION 4 -->
             <div class="card" onclick="toggle('m4')">
                 <strong>💋 MISSION 04 — First Kiss Incident</strong>
 
                 <div id="m4" class="hidden">
+
                     <p><strong>Date:</strong> 24.04</p>
+
+                    <p>Police interaction triggered unexpected romantic outcome.</p>
 
                     <ul>
                         <li data-typewriter>Offense: Existing near police officers.</li>
                         <li data-typewriter>Unexpected Consequence: First kiss.</li>
                         <li data-typewriter>Time of return home: 03:00</li>
                     </ul>
+
                 </div>
             </div>
 
         </div>
     </div>
 
+    <!-- SECRET FILES -->
     <div class="section">
         <h2>Secret Files</h2>
 
@@ -329,7 +311,7 @@ function typeWriter(el, speed = 18) {
     write();
 }
 
-/* TOGGLE (FIXED - SINGLE VERSION ONLY) */
+/* TOGGLE (FIXED) */
 function toggle(id) {
     const el = document.getElementById(id);
     const opening = el.classList.contains("hidden");
@@ -337,6 +319,7 @@ function toggle(id) {
     el.classList.toggle("hidden");
 
     if (opening) {
+
         boom();
 
         if (id === "m4") {
@@ -352,7 +335,7 @@ function toggle(id) {
                 }
                 typeWriter(item);
             });
-        }, 100);
+        }, 120);
     }
 }
 
